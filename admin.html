@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - R2Y Shop</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f9; color: #333; padding: 20px; }
+        .admin-container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2 { text-align: center; margin-bottom: 20px; color: #1e1e24; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        .form-group textarea { resize: vertical; height: 80px; }
+        .btn-guardar { width: 100%; background-color: #1e1e24; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .btn-guardar:hover { background-color: #333; }
+        .lista-productos { margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px; }
+        .item-producto { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #eee; }
+        .btn-borrar { background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <h1>⚙️ Panel R2Y Shop</h1>
+        <h2>Añadir Nuevo Producto</h2>
+        
+        <form id="form-producto">
+            <div class="form-group">
+                <label for="nombre">Nombre del Producto:</label>
+                <input type="text" id="nombre" required placeholder="Ej. Gorra R2Y">
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" step="0.01" required placeholder="Ej. 19.99">
+            </div>
+            <div class="form-group">
+                <label for="imagen">URL de la Imagen:</label>
+                <input type="url" id="imagen" required placeholder="https://enlace-de-tu-foto.com/imagen.jpg">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" placeholder="Escribe los detalles del producto..."></textarea>
+            </div>
+            <button type="submit" class="btn-guardar">Publicar Producto</button>
+        </form>
+
+        <div class="lista-productos">
+            <h2>Productos Actuales</h2>
+            <div id="productos-admin">
+                <p style="text-align: center; color: #777;">No hay productos guardados aún.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Aquí programaremos la lógica para subir y borrar datos en Supabase
+        console.log("Panel de administración listo.");
+    </script>
+</body>
+</html>
